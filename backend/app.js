@@ -26,7 +26,8 @@ app.use(morgan("tiny"));
 app.use(authJWT()); //secure APIs based on token
 app.use("/public/uploads", express.static(__dirname + "/public/uploads")); //__dirname return a root path static path
 app.use(errorHandler);
-//Routes
+
+//API Routes
 app.use(`${api}/categories`, categoriesRoutes);
 app.use(`${api}/products`, productsRoutes);
 app.use(`${api}/users`, usersRoutes);
@@ -47,12 +48,11 @@ mongoose
     console.log(err);
   });
 
-//Server
 // app.listen(8000, () => {
-//   console.log(`server is listenig in Port 8000`);
+//   console.log(`server is listenig on Port 8000`);
 // });
 
 var server = app.listen(process.env.PORT || 3000, function () {
   var port = server.address().port;
-  console.log(`express is working on Port ${port}`);
+  console.log(`Express is working on Port ${port}`);
 });

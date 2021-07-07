@@ -24,7 +24,7 @@ router.get("/:id", async (req, res) => {
   res.status(200).send(user);
 });
 
-router.post("/", async (req, res) => {
+router.post("/register", async (req, res) => {
   let user = new User({
     name: req.body.name,
     email: req.body.email,
@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
   });
   user = await user.save();
 
-  if (!user) return res.status(400).send("the user cannot be created!");
+  if (!user) return res.status(400).send("The user cannot be created!");
   res.send(user);
 });
 
