@@ -1,5 +1,6 @@
 import express from "express";
-import { urlencoded, json } from "body-parser";
+import pkg from "body-parser";
+const { urlencoded, json } = pkg;
 import morgan from "morgan";
 import "dotenv/config";
 import mongoose from "mongoose";
@@ -52,7 +53,7 @@ mongoose
 //   console.log(`server is listenig on Port 8000`);
 // });
 
-var server = app.listen(process.env.PORT || 3000, function () {
+var server = app.listen(process.env.PORT || 8080, function () {
   var port = server.address().port;
   console.log(`Express is working on Port ${port}`);
 });
