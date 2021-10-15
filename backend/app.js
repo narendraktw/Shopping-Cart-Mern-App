@@ -49,10 +49,6 @@ mongoose
     console.log(err);
   });
 
-// app.listen(8000, () => {
-//   console.log(`server is listenig on Port 8000`);
-// });
-
 var server = app.listen(process.env.PORT || 8080, function () {
   var port = server.address().port;
   console.log(`Express is working on Port ${port}`);
